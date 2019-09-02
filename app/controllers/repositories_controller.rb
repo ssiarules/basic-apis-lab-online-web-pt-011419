@@ -12,4 +12,8 @@ class RepositoriesController < ApplicationController
   end
   render 'search'
 end
+
+body_hash = JSON.parse(@resp.body)
+    @search_names = body_hash["response"]["venues"]
+    render 'search'
 end
